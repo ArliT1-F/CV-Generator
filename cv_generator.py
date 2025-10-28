@@ -74,6 +74,7 @@ def generate_cv(output_path="CV_Styled.pdf"):
         ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
         ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
         ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        # Add more if needed
     ]
     work_table = Table(work_data, colWidths=[130, 340])
     work_table.setStyle(TableStyle([
