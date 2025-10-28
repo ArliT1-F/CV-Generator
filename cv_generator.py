@@ -3,9 +3,9 @@ from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
 
-def generate_cv(output_path="CV_Iliriana_Riza_Turka_Styled.pdf"):
+def generate_cv(output_path="CV_Styled.pdf"):
     """
-    Generate a styled CV PDF document for Iliriana Riza Turka.
+    Generate a styled CV PDF document with placeholders.
     
     Args:
         output_path (str): Path where the PDF will be saved
@@ -29,49 +29,51 @@ def generate_cv(output_path="CV_Iliriana_Riza_Turka_Styled.pdf"):
     elements = []
 
     # Header
-    elements.append(Paragraph("ILIRIANA RIZA TURKA", header_style))
-    elements.append(Paragraph("Rr. "Ibrahim Rugova", Pll. Shallvare, Shk. 4, Tiranë | Tel: +355 676060723", subheader_style))
+    elements.append(Paragraph("[FULL NAME]", header_style))
+    elements.append(Paragraph("[ADDRESS] | Tel: [PHONE NUMBER] | Email: [EMAIL]", subheader_style))
     elements.append(HRFlowable(width="100%", color=colors.HexColor("#1C3D5A"), thickness=1))
     elements.append(Spacer(1, 12))
 
-    # Të dhëna personale
-    elements.append(Paragraph("TË DHËNA PERSONALE", section_title))
-    elements.append(Paragraph("Datëlindja: 15 Janar 1976<br/>"
-                              "Vendlindja: Durrës, Shqipëri", text_style))
+    # Personal Information
+    elements.append(Paragraph("PERSONAL INFORMATION", section_title))
+    elements.append(Paragraph("Date of Birth: [DATE OF BIRTH]<br/>"
+                              "Place of Birth: [PLACE OF BIRTH]<br/>"
+                              "Nationality: [NATIONALITY]", text_style))
 
-    # Arsimi
-    elements.append(Paragraph("ARSIMI", section_title))
-    elements.append(Paragraph("2013–2015 – Master Profesional në Edukatë Qytetare – Histori<br/>"
-                              "Universiteti "Aleksandër Xhuvani", Elbasan<br/><br/>"
-                              "2009–2013 – Bachelor në Edukim Qytetar<br/>"
-                              "Universiteti "Aleksandër Xhuvani", Elbasan<br/><br/>"
-                              "1993–1997 – Shkollë e Mesme e Përgjithshme "Kamëz"", text_style))
+    # Education
+    elements.append(Paragraph("EDUCATION", section_title))
+    elements.append(Paragraph("[YEAR] – [DEGREE] in [FIELD OF STUDY]<br/>"
+                              "[UNIVERSITY/INSTITUTION NAME], [LOCATION]<br/><br/>"
+                              "[YEAR] – [DEGREE] in [FIELD OF STUDY]<br/>"
+                              "[UNIVERSITY/INSTITUTION NAME], [LOCATION]<br/><br/>"
+                              "[YEAR] – [HIGH SCHOOL NAME]", text_style))
 
-    # Aftësi Gjuhësore
-    elements.append(Paragraph("AFTËSI GJUHËSORE", section_title))
-    elements.append(Paragraph("• Anglisht – Certifikatë TOEIC (2014)<br/>"
-                              "• Italisht – Njohuri të mira në të folur", text_style))
+    # Language Skills
+    elements.append(Paragraph("LANGUAGE SKILLS", section_title))
+    elements.append(Paragraph("• [LANGUAGE 1] – [PROFICIENCY LEVEL] ([CERTIFICATION/YEAR])<br/>"
+                              "• [LANGUAGE 2] – [PROFICIENCY LEVEL]<br/>"
+                              "• [LANGUAGE 3] – [PROFICIENCY LEVEL]", text_style))
 
-    # Kualifikime
-    elements.append(Paragraph("KUALIFIKIME DHE ÇERTIFIKATA TË TJERA", section_title))
-    elements.append(Paragraph("• 2019 – Çertifikatë për formimin dhe kualifikimin e punonjësve të Policisë Bashkiake<br/>"
-                              "• 2017 – Dëshmi aftësie për punonjës shërbimi në SHPSF<br/>"
-                              "• 2017 – Trajnim bazë dhe Çertifikatë e Lotarisë Kombëtare<br/>"
-                              "• 2014 – Çertifikatë për Edukimin e Qytetarisë Demokratike në Shekullin e Ri<br/>"
-                              "• 2011 – Çertifikatë bazë e formimit të kompjuterit – Qendra Didaktike "IRISOFT"", text_style))
+    # Certifications
+    elements.append(Paragraph("CERTIFICATIONS AND QUALIFICATIONS", section_title))
+    elements.append(Paragraph("• [YEAR] – [CERTIFICATION NAME]<br/>"
+                              "• [YEAR] – [CERTIFICATION NAME]<br/>"
+                              "• [YEAR] – [CERTIFICATION NAME]<br/>"
+                              "• [YEAR] – [CERTIFICATION NAME]<br/>"
+                              "• [YEAR] – [CERTIFICATION NAME]", text_style))
 
-    # Eksperienca e Punës
-    elements.append(Paragraph("EKSPERIENCA E PUNËS", section_title))
+    # Work Experience
+    elements.append(Paragraph("WORK EXPERIENCE", section_title))
     work_data = [
-        ["2019 – Vazhdon", "Policia Bashkiake, Tiranë – Punonjëse Policie"],
-        ["Qershor 2018 – Korrik 2019", "Toni Security SH.P.K. – Punonjëse Sigurie"],
-        ["Korrik 2017 – Shtator 2018", "Multi Parking Management – Mbikëqyrëse / Punonjëse Parkimi"],
-        ["Qershor 2016 – Mars 2017", "Albion-R2015 – Punonjëse Sigurie"],
-        ["Shtator 2012 – Janar 2013", "FastCall – Operatore Call Center"],
-        ["2011 – 2012", "Shitëse Butiku"],
-        ["2007 – 2011", "Shitëse"],
-        ["2002 – 2005", "Fabrikë Këpucësh – Përgjegjëse"],
-        ["1998 – 1999", "Firma "Ital Shoes" – Punëtore / Operatore"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
+        ["[START DATE] – [END DATE]", "[COMPANY NAME], [LOCATION] – [JOB TITLE]"],
     ]
     work_table = Table(work_data, colWidths=[130, 340])
     work_table.setStyle(TableStyle([
@@ -86,15 +88,15 @@ def generate_cv(output_path="CV_Iliriana_Riza_Turka_Styled.pdf"):
     ]))
     elements.append(work_table)
 
-    # Aftësi Kompjuterike
-    elements.append(Paragraph("AFTËSI KOMPJUTERIKE", section_title))
-    elements.append(Paragraph("Njohuri bazë në përdorimin e kompjuterit (Windows, Microsoft Office, Internet, Email)", text_style))
+    # Computer Skills
+    elements.append(Paragraph("COMPUTER SKILLS", section_title))
+    elements.append(Paragraph("[SKILL 1], [SKILL 2], [SKILL 3], [SKILL 4], [SKILL 5]", text_style))
 
-    # Atribute Personale
-    elements.append(Paragraph("ATRIBUTE PERSONALE", section_title))
-    elements.append(Paragraph("• E përgjegjshme, e organizuar dhe bashkëpunuese<br/>"
-                              "• Aftësi të mira komunikimi dhe pune në grup<br/>"
-                              "• E përkushtuar ndaj zhvillimit profesional dhe shërbimit publik", text_style))
+    # Personal Attributes
+    elements.append(Paragraph("PERSONAL ATTRIBUTES", section_title))
+    elements.append(Paragraph("• [ATTRIBUTE 1], [ATTRIBUTE 2] and [ATTRIBUTE 3]<br/>"
+                              "• [ATTRIBUTE 4] and [ATTRIBUTE 5]<br/>"
+                              "• [ATTRIBUTE 6] and [ATTRIBUTE 7]", text_style))
 
     # Build PDF
     doc.build(elements)
